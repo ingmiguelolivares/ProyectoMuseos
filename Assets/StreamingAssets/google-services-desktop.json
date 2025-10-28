@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "464723334667",
+    "firebase_url": "https://museo-sisicolombia-default-rtdb.firebaseio.com",
+    "project_id": "museo-sisicolombia",
+    "storage_bucket": "museo-sisicolombia.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:464723334667:android:95e7bb4c4675d2f24a990e",
+        "android_client_info": {
+          "package_name": "com.museosisi.recorrido"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjDYOmaI1tKsQRniAYTPQdezTW7017i7w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
