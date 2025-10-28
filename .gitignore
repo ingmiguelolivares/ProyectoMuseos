@@ -126,8 +126,8 @@ firebase.json
 /extensions.json
 
 # Firebase Unity SDK (optional: uncomment if managed via Package Manager)
-# /Assets/Firebase/
-# /Assets/Firebase.meta
+/Assets/Firebase/
+/Assets/Firebase.meta
 
 # ===================================================
 # END OF FILE
