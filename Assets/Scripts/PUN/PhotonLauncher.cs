@@ -6,24 +6,23 @@ public class PhotonLauncher : MonoBehaviourPunCallbacks
 {
     void Start()
     {
+        PhotonNetwork.LogLevel = PunLogLevel.Full;
+
         Debug.Log("🚀 PhotonLauncher iniciado en escena del Museo");
 
-        // Verificar si el jugador ya ingresó su nombre
         string playerName = PlayerPrefs.GetString("PlayerName", "");
 
         if (!string.IsNullOrEmpty(playerName))
         {
-            // Configurar nombre en Photon
             PhotonNetwork.NickName = playerName;
-
             Debug.Log("🔄 Conectando a Photon con nombre: " + playerName);
-
-            // Conectar a Photon
             PhotonNetwork.ConnectUsingSettings();
         }
         else
         {
-            Debug.LogError("❌ No hay nombre guardado. El usuario debe pasar por el login primero.");
+            Debug.LogWarning("⚠️ No hay nombre guardado. Conectando con nombre aleatorio...");
+            PhotonNetwork.NickName = "Visitante" + Random.Range(1000, 9999);
+            PhotonNetwork.ConnectUsingSettings();
         }
     }
 
@@ -47,27 +46,19 @@ public class PhotonLauncher : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         Debug.Log("✅ Entró a la sala: " + PhotonNetwork.CurrentRoom.Name);
-        Debug.Log("👥 Jugadores en la sala: " + PhotonNetwork.CurrentRoom.PlayerCount);
 
-        // ✅ Buscar el punto de spawn en la escena
-        GameObject spawnPoint = GameObject.Find("SpawnPoint");
-        Vector3 spawnPosition;
+        // Posición fija
+        Vector3 spawnPosition = new Vector3(8, 1, 52);
 
-        if (spawnPoint != null)
-        {
-            spawnPosition = spawnPoint.transform.position;
-        }
-        else
-        {
-            Debug.LogWarning("⚠️ No se encontró 'SpawnPoint', usando posición por defecto.");
-            spawnPosition = new Vector3(0, 1, 0);
-        }
+        // ✅ Rotación en Y = 90°
+        Quaternion spawnRotation = Quaternion.Euler(0, 90, 0);
 
-        GameObject player = PhotonNetwork.Instantiate("Jugador", spawnPosition, Quaternion.identity);
+        // Instanciar el jugador con rotación
+        GameObject player = PhotonNetwork.Instantiate("Jugador", spawnPosition, spawnRotation);
 
         if (player != null)
         {
-            Debug.Log("✅ Jugador instanciado exitosamente!");
+            Debug.Log("✅ Jugador instanciado con rotación en Y = 90°!");
         }
     }
 
@@ -75,17 +66,5 @@ public class PhotonLauncher : MonoBehaviourPunCallbacks
     public override void OnJoinRoomFailed(short returnCode, string message)
     {
         Debug.LogError("❌ Error al unirse a la sala: " + message);
-    }
-
-    public override void OnDisconnected(DisconnectCause cause)
-    {
-        Debug.LogWarning("⚠️ Desconectado de Photon: " + cause);
-    }
-
-    public void ConectarConNombre(string nombre)
-    {
-        PhotonNetwork.NickName = nombre;
-        PhotonNetwork.ConnectUsingSettings();
-        Debug.Log("🔄 Conectando a Photon con nombre: " + nombre);
     }
 }
