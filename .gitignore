@@ -1,7 +1,8 @@
-# This .gitignore file should be placed at the root of your Unity project directory
-#
-# Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
-#
+# ===================================================
+# UNITY + FIREBASE .gitignore
+# ===================================================
+
+# Base Unity configuration
 .utmp/
 /[Ll]ibrary/
 /[Tt]emp/
@@ -73,3 +74,61 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+
+# ===================================================
+# FIREBASE SPECIFIC RULES
+# ===================================================
+
+# Firebase configuration files (Android)
+# ⚠️ These usually contain API keys, project IDs, and sender IDs
+/google-services.json
+/google-services.json.meta
+
+# Firebase configuration files (iOS)
+/GoogleService-Info.plist
+/GoogleService-Info.plist.meta
+
+# Firebase Web (if you build WebGL with Firebase)
+firebase.json
+.firebaserc
+.firebase/
+.firebase-cache/
+firebase-debug.log
+
+# Firebase Emulator Suite
+/firebase-emulator/
+firebase-debug.log
+emulator-debug.log
+ui-debug.log
+
+# Firebase Crashlytics and Analytics temporary data
+crashlytics/
+fabric/
+.analytics-*
+/*.profdata
+
+# Firebase Functions (for projects that include Cloud Functions)
+/functions/node_modules/
+/functions/lib/
+/functions/.runtimeconfig.json
+/functions/package-lock.json
+/functions/npm-debug.log
+/functions/yarn.lock
+
+# Firebase Hosting deployment cache
+/.firebase/
+/.firebaserc
+firebase.json
+
+# Firebase Extensions auto-generated files
+/extensions/
+/extensions.json
+
+# Firebase Unity SDK (optional: uncomment if managed via Package Manager)
+# /Assets/Firebase/
+# /Assets/Firebase.meta
+
+# ===================================================
+# END OF FILE
+# ===================================================
