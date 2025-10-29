@@ -47,27 +47,19 @@ public class PhotonLauncher : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         Debug.Log("✅ Entró a la sala: " + PhotonNetwork.CurrentRoom.Name);
-        Debug.Log("👥 Jugadores en la sala: " + PhotonNetwork.CurrentRoom.PlayerCount);
 
-        // ✅ Buscar el punto de spawn en la escena
-        GameObject spawnPoint = GameObject.Find("SpawnPoint");
-        Vector3 spawnPosition;
+        // Posición fija
+        Vector3 spawnPosition = new Vector3(8, 1, 52);
 
-        if (spawnPoint != null)
-        {
-            spawnPosition = spawnPoint.transform.position;
-        }
-        else
-        {
-            Debug.LogWarning("⚠️ No se encontró 'SpawnPoint', usando posición por defecto.");
-            spawnPosition = new Vector3(0, 1, 0);
-        }
+        // ✅ Rotación en Y = 90°
+        Quaternion spawnRotation = Quaternion.Euler(0, 90, 0);
 
-        GameObject player = PhotonNetwork.Instantiate("Jugador", spawnPosition, Quaternion.identity);
+        // Instanciar el jugador con rotación
+        GameObject player = PhotonNetwork.Instantiate("Jugador", spawnPosition, spawnRotation);
 
         if (player != null)
         {
-            Debug.Log("✅ Jugador instanciado exitosamente!");
+            Debug.Log("✅ Jugador instanciado con rotación en Y = 90°!");
         }
     }
 

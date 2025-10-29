@@ -2,10 +2,9 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
-using Firebase;
-using Firebase.Database;
 using Photon.Pun;
 using System;
+using System.Collections.Generic;
 
 public class LoginManager : MonoBehaviour
 {
@@ -15,30 +14,12 @@ public class LoginManager : MonoBehaviour
     public Button entrarButton;
     public TMP_Text mensajeText;
 
-    private DatabaseReference databaseReference;
-
     void Start()
     {
-        // Verificar Firebase
-        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => {
-            if (task.Result == DependencyStatus.Available)
-            {
-                InitializeFirebase();
-            }
-            else
-            {
-                Debug.LogError("No se pudo inicializar Firebase: " + task.Result);
-            }
-        });
-
         // Configurar botón
         entrarButton.onClick.AddListener(OnEntrarClicked);
-    }
 
-    void InitializeFirebase()
-    {
-        databaseReference = FirebaseDatabase.DefaultInstance.RootReference;
-        Debug.Log("✅ Firebase inicializado correctamente");
+        Debug.Log("✅ LoginManager iniciado");
     }
 
     void OnEntrarClicked()
@@ -60,46 +41,37 @@ public class LoginManager : MonoBehaviour
         mensajeText.text = "Conectando...";
         entrarButton.interactable = false;
 
-        // Guardar en Firebase
-        GuardarRegistroEnFirebase(nombre);
+        // Guardar nombre
+        GuardarDatosJugador(nombre);
     }
 
-    void GuardarRegistroEnFirebase(string nombre)
+    void GuardarDatosJugador(string nombre)
     {
-        // ⭐ GUARDAR NOMBRE INMEDIATAMENTE ANTES DE TODO
+        // Guardar nombre localmente
         PlayerPrefs.SetString("PlayerName", nombre);
+        PlayerPrefs.SetString("JoinDate", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
         PlayerPrefs.Save();
+
+        // Configurar nombre en Photon
         PhotonNetwork.NickName = nombre;
 
-        Debug.Log("✅ Nombre guardado localmente: " + nombre);
+        Debug.Log("✅ Nombre guardado: " + nombre);
 
-        // Crear ID único para el registro
-        string userId = SystemInfo.deviceUniqueIdentifier;
-        string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-
-        // Crear objeto de registro
-        var registroData = new
+        // También podemos guardar estadísticas en Custom Properties de Photon
+        ExitGames.Client.Photon.Hashtable playerProperties = new ExitGames.Client.Photon.Hashtable
         {
-            nombre = nombre,
-            fecha = timestamp,
-            dispositivo = SystemInfo.deviceModel,
-            sistemaOperativo = SystemInfo.operatingSystem
+            { "DisplayName", nombre },
+            { "JoinDate", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") },
+            { "Visits", PlayerPrefs.GetInt("TotalVisits", 0) + 1 }
         };
 
-        // Guardar en Firebase (asíncrono, pero no esperamos)
-        databaseReference.Child("visitantes").Child(userId).SetRawJsonValueAsync(JsonUtility.ToJson(registroData))
-            .ContinueWith(task => {
-                if (task.IsCompleted)
-                {
-                    Debug.Log("✅ Registro guardado en Firebase");
-                }
-                else
-                {
-                    Debug.LogError("❌ Error al guardar en Firebase: " + task.Exception);
-                }
-            });
+        PhotonNetwork.LocalPlayer.SetCustomProperties(playerProperties);
 
-        // Cerrar panel y cambiar escena INMEDIATAMENTE
+        // Incrementar contador de visitas
+        PlayerPrefs.SetInt("TotalVisits", PlayerPrefs.GetInt("TotalVisits", 0) + 1);
+        PlayerPrefs.Save();
+
+        // Cerrar panel y cambiar escena
         ConectarPhoton(nombre);
     }
 
