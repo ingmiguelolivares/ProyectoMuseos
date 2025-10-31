@@ -49,17 +49,17 @@ public class PhotonLauncher : MonoBehaviourPunCallbacks
         Debug.Log("✅ Entró a la sala: " + PhotonNetwork.CurrentRoom.Name);
 
         // Posición fija
-        Vector3 spawnPosition = new Vector3(8, 1, 52);
+        Vector3 spawnPosition = new Vector3(45, 1, 24);
 
         // ✅ Rotación en Y = 90°
-        Quaternion spawnRotation = Quaternion.Euler(0, 90, 0);
+        Quaternion spawnRotation = Quaternion.Euler(0, 0, 0);
 
         // Instanciar el jugador con rotación
         GameObject player = PhotonNetwork.Instantiate("Jugador", spawnPosition, spawnRotation);
 
         if (player != null)
         {
-            Debug.Log("✅ Jugador instanciado con rotación en Y = 90°!");
+            Debug.Log("✅ Jugador instanciado");
         }
     }
 

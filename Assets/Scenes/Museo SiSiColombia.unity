@@ -1116,6 +1116,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!328 &50251757
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -1498,6 +1500,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 67644512}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!328 &67644512
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -2785,6 +2789,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &100770719
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3729,6 +3735,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &120852070
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5626,7 +5634,7 @@ VideoPlayer:
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 3
   m_AspectRatio: 2
-  m_DataSource: 0
+  m_DataSource: 1
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 1
@@ -5634,7 +5642,7 @@ VideoPlayer:
   - {fileID: 203725401}
   m_DirectAudioVolumes:
   - 1
-  m_Url: 
+  m_Url: https://cdn.jsdelivr.net/gh/museosisicolombia/museo-sisicolombia-videos-/Filigrana.mp4
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
@@ -5767,6 +5775,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 203725394}
+  audioSource3D: {fileID: 203725401}
+  reiniciarAlSalir: 1
 --- !u!82 &203725401
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5789,7 +5799,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 3
+  MaxDistance: 1.2
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -6619,6 +6629,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &223662425
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8140,6 +8152,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &264361899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9474,6 +9488,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!328 &285472501
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -9892,6 +9908,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &304140017
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10063,6 +10081,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &306058874
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10580,6 +10600,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!328 &334887335
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -11858,6 +11880,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &375048609
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12038,13 +12062,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380196852}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 8, y: 1.5, z: 52.22}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 44.4, y: 2.4, z: 21.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &385808792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15084,7 +15108,7 @@ GameObject:
   - component: {fileID: 472590100}
   - component: {fileID: 472590099}
   - component: {fileID: 472590105}
-  - component: {fileID: 472590107}
+  - component: {fileID: 472590106}
   m_Layer: 0
   m_Name: ParedQ
   m_TagString: Untagged
@@ -15100,7 +15124,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 472590097}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 3a77b8e6bf212d34db5327b9f7c1d2f7, type: 3}
+  m_VideoClip: {fileID: 0}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -15110,19 +15134,19 @@ VideoPlayer:
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 3
   m_AspectRatio: 2
-  m_DataSource: 0
+  m_DataSource: 1
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 1
   m_TargetAudioSources:
-  - {fileID: 472590107}
+  - {fileID: 472590106}
   m_DirectAudioVolumes:
   - 1
-  m_Url: 
+  m_Url: https://cdn.jsdelivr.net/gh/museosisicolombia/museo-sisicolombia-videos-/Queso.mp4
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
   m_WaitForFirstFrame: 1
@@ -15251,7 +15275,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 472590099}
---- !u!82 &472590107
+  audioSource3D: {fileID: 472590106}
+  reiniciarAlSalir: 1
+--- !u!82 &472590106
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15263,7 +15289,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -15273,9 +15299,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 1.5
+  MaxDistance: 1.2
   Pan2D: 0
-  rolloffMode: 2
+  rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -15283,23 +15309,23 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.6666667
+      time: 0
       value: 1
-      inSlope: -1.5005997
-      outSlope: -1.5005997
+      inSlope: -1.6803355
+      outSlope: -1.6803355
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
-      outWeight: 0
+      inWeight: 0.33333334
+      outWeight: 0.21000805
     - serializedVersion: 3
-      time: 1
-      value: 0.6666667
-      inSlope: 0.60909873
-      outSlope: 0.60909873
+      time: 0.4595642
+      value: 0
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.41710445
-      outWeight: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -15337,8 +15363,8 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.16053581
-      value: 0.99718857
+      time: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -15667,6 +15693,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &491558123
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16016,7 +16044,7 @@ VideoPlayer:
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 3
   m_AspectRatio: 2
-  m_DataSource: 0
+  m_DataSource: 1
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 1
@@ -16024,7 +16052,7 @@ VideoPlayer:
   - {fileID: 509681044}
   m_DirectAudioVolumes:
   - 1
-  m_Url: 
+  m_Url: https://cdn.jsdelivr.net/gh/museosisicolombia/museo-sisicolombia-videos-/Dulce_tamarindo.mp4
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
@@ -16157,6 +16185,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 509681037}
+  audioSource3D: {fileID: 509681044}
+  reiniciarAlSalir: 1
 --- !u!82 &509681044
 AudioSource:
   m_ObjectHideFlags: 0
@@ -16179,7 +16209,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 3
+  MaxDistance: 1.2
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -17863,6 +17893,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!328 &580965468
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -18902,6 +18934,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &604634576
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19046,6 +19080,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &607415324
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23478,6 +23514,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!328 &755438130
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -24192,6 +24230,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &796658218
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24539,6 +24579,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &808174460
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24948,6 +24990,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &811908968
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25312,6 +25356,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &827731567
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27942,6 +27988,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!328 &902245419
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -28624,6 +28672,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &910962043
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28768,6 +28818,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &914737156
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29707,6 +29759,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &943801274
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31380,6 +31434,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!328 &1000530194
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -33300,7 +33356,7 @@ VideoPlayer:
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 3
   m_AspectRatio: 2
-  m_DataSource: 0
+  m_DataSource: 1
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 1
@@ -33308,7 +33364,7 @@ VideoPlayer:
   - {fileID: 1073530335}
   m_DirectAudioVolumes:
   - 1
-  m_Url: 
+  m_Url: https://cdn.jsdelivr.net/gh/museosisicolombia/museo-sisicolombia-videos-/Escobajo.mp4
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
@@ -33441,6 +33497,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 1073530328}
+  audioSource3D: {fileID: 1073530335}
+  reiniciarAlSalir: 1
 --- !u!82 &1073530335
 AudioSource:
   m_ObjectHideFlags: 0
@@ -33463,7 +33521,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 3
+  MaxDistance: 1.2
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -34025,6 +34083,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &1092757876
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34481,6 +34541,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &1099385446
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36098,6 +36160,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &1125045727
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37092,6 +37156,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &1162878164
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38114,6 +38180,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!23 &1230032376
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43458,6 +43526,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &1473066616
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44229,6 +44299,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &1507480732
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44483,6 +44555,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!23 &1524349426
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45039,6 +45113,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!328 &1551588668
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -45332,6 +45408,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &1561920285
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45621,6 +45699,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!328 &1567935623
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -46504,6 +46584,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!328 &1582823242
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -46896,7 +46978,7 @@ VideoPlayer:
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 3
   m_AspectRatio: 2
-  m_DataSource: 0
+  m_DataSource: 1
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 1
@@ -46904,7 +46986,7 @@ VideoPlayer:
   - {fileID: 1606491834}
   m_DirectAudioVolumes:
   - 1
-  m_Url: 
+  m_Url: https://cdn.jsdelivr.net/gh/museosisicolombia/museo-sisicolombia-videos-/Carpintero.mp4
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
@@ -47037,6 +47119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 1606491827}
+  audioSource3D: {fileID: 1606491834}
+  reiniciarAlSalir: 1
 --- !u!82 &1606491834
 AudioSource:
   m_ObjectHideFlags: 0
@@ -47059,7 +47143,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 3
+  MaxDistance: 1.2
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -48767,7 +48851,7 @@ VideoPlayer:
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 3
   m_AspectRatio: 2
-  m_DataSource: 0
+  m_DataSource: 1
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 1
@@ -48775,7 +48859,7 @@ VideoPlayer:
   - {fileID: 1664312232}
   m_DirectAudioVolumes:
   - 1
-  m_Url: 
+  m_Url: https://cdn.jsdelivr.net/gh/museosisicolombia/museo-sisicolombia-videos-/Dulce_limon.mp4
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
@@ -48908,6 +48992,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 1664312225}
+  audioSource3D: {fileID: 1664312232}
+  reiniciarAlSalir: 1
 --- !u!82 &1664312232
 AudioSource:
   m_ObjectHideFlags: 0
@@ -48930,7 +49016,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 3
+  MaxDistance: 1.2
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -49267,6 +49353,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &1684970699
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50949,6 +51037,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!328 &1722202408
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -53099,6 +53189,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &1776522319
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55569,6 +55661,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &1888073805
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -58138,6 +58232,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!65 &1985210735
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -59983,6 +60079,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 0}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!328 &2054288975
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -60971,6 +61069,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   video: {fileID: 2093164616}
+  audioSource3D: {fileID: 0}
+  reiniciarAlSalir: 1
 --- !u!82 &2093164623
 AudioSource:
   m_ObjectHideFlags: 0
@@ -60993,7 +61093,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 3
+  MaxDistance: 1.2
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
