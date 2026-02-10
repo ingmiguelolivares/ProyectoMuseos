@@ -13,7 +13,7 @@ public class LogicaBrillo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        slider.value = PlayerPrefs.GetFloat("brillo", 1f);
+        slider.value = PlayerPrefs.GetFloat("brillo", 0f);
 
         panelBrillo.color = new Color(panelBrillo.color.r, panelBrillo.color.g, panelBrillo.color.b, slider.value);
     }
