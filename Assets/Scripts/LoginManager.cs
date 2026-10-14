@@ -1,28 +1,27 @@
 ﻿
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using TMPro;
 using Firebase;
 using Firebase.Database;
+using Firebase.Auth;
 using Photon.Pun;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 public class LoginManager : MonoBehaviour
 {
     [Header("UI References")]
     [SerializeField] private GameObject loginPanel;
+    [SerializeField] private GameObject panelGlobal;
     [SerializeField] private TMP_InputField nombreInput;
     [SerializeField] private Button entrarButton;
     [SerializeField] private TMP_Text mensajeText;
 
-    [Header("Configuración")]
-    [SerializeField] private string nombreEscenaMuseo = "Museo SiSiColombia";
-
     private DatabaseReference databaseReference;
+    private FirebaseAuth firebaseAuth;
+
     private bool firebaseListo = false;
     private bool procesandoLogin = false;
 
@@ -31,6 +30,9 @@ public class LoginManager : MonoBehaviour
         // Validar referencias de la interfaz.
         if (loginPanel == null)
             Debug.LogError("LoginManager: falta asignar Login Panel.", this);
+
+        if (panelGlobal == null)
+            Debug.LogError("LoginManager: falta asignar Panel Global.", this);
 
         if (nombreInput == null)
             Debug.LogError("LoginManager: falta asignar Nombre Input.", this);
@@ -41,7 +43,7 @@ public class LoginManager : MonoBehaviour
         if (mensajeText == null)
             Debug.LogError("LoginManager: falta asignar Mensaje Text.", this);
 
-        // Configurar el botón si está asignado.
+        // Configurar el botón.
         if (entrarButton != null)
         {
             entrarButton.onClick.RemoveListener(OnEntrarClicked);
@@ -52,71 +54,132 @@ public class LoginManager : MonoBehaviour
         if (mensajeText != null)
             mensajeText.text = "Conectando con el servidor...";
 
-        // Inicializar Firebase.
-        _ = InicializarFirebaseAsync();
+        StartCoroutine(InicializarFirebase());
     }
 
-    private async Task InicializarFirebaseAsync()
+    private IEnumerator InicializarFirebase()
     {
+        var tareaDependencias =
+            FirebaseApp.CheckAndFixDependenciesAsync();
+
+        yield return new WaitUntil(
+            () => tareaDependencias.IsCompleted
+        );
+
+        if (tareaDependencias.IsCanceled ||
+            tareaDependencias.IsFaulted)
+        {
+            Debug.LogError(
+                "Error al comprobar las dependencias de Firebase: " +
+                tareaDependencias.Exception, this
+            );
+
+            MostrarError("No se pudo iniciar Firebase.");
+            yield break;
+        }
+
+        if (tareaDependencias.Result != DependencyStatus.Available)
+        {
+            Debug.LogError(
+                "Dependencias de Firebase no disponibles: " +
+                tareaDependencias.Result, this
+            );
+
+            MostrarError("No se pudo conectar con el servidor.");
+            yield break;
+        }
+
         try
         {
-            DependencyStatus estado =
-                await FirebaseApp.CheckAndFixDependenciesAsync();
-
-            if (estado != DependencyStatus.Available)
-            {
-                Debug.LogError(
-                    "No se pudo inicializar Firebase: " + estado, this);
-
-                MostrarError("No se pudo conectar con el servidor.");
-                return;
-            }
+            firebaseAuth = FirebaseAuth.DefaultInstance;
 
             databaseReference =
                 FirebaseDatabase.DefaultInstance.RootReference;
-
-            firebaseListo = databaseReference != null;
-
-            if (!firebaseListo)
-            {
-                MostrarError("No se pudo preparar la conexión.");
-                return;
-            }
-
-            Debug.Log("Firebase inicializado correctamente.");
-
-            if (mensajeText != null)
-                mensajeText.text = "Ingresa tu nombre para continuar.";
-
-            if (entrarButton != null)
-                entrarButton.interactable = true;
         }
         catch (Exception ex)
         {
             Debug.LogException(ex, this);
-            MostrarError("Error al iniciar la conexión.");
+            MostrarError("No se pudo preparar Firebase.");
+            yield break;
         }
+
+        if (firebaseAuth == null || databaseReference == null)
+        {
+            MostrarError("No se pudo preparar la conexión.");
+            yield break;
+        }
+
+        // Autenticar anónimamente al visitante.
+        if (firebaseAuth.CurrentUser == null)
+        {
+            var tareaAuth = firebaseAuth.SignInAnonymouslyAsync();
+
+            yield return new WaitUntil(() => tareaAuth.IsCompleted);
+
+            if (tareaAuth.IsCanceled || tareaAuth.IsFaulted)
+            {
+                Debug.LogError(
+                    "Error en la autenticación anónima: " +
+                    tareaAuth.Exception, this
+                );
+
+                MostrarError(
+                    "No se pudo autenticar al visitante."
+                );
+
+                yield break;
+            }
+        }
+
+        if (firebaseAuth.CurrentUser == null)
+        {
+            MostrarError(
+                "Firebase no pudo identificar al visitante."
+            );
+
+            yield break;
+        }
+
+        firebaseListo = true;
+
+        Debug.Log(
+            "Firebase inicializado. Usuario autenticado: " +
+            firebaseAuth.CurrentUser.UserId, this
+        );
+
+        if (mensajeText != null)
+            mensajeText.text =
+                "Ingresa tu nombre para continuar.";
+
+        if (entrarButton != null)
+            entrarButton.interactable = true;
     }
 
     public void OnEntrarClicked()
     {
-        // Evitar referencias nulas.
         if (nombreInput == null ||
             mensajeText == null ||
             entrarButton == null)
         {
             Debug.LogError(
-                "LoginManager: revisa las referencias de la interfaz.", this);
+                "LoginManager: revisa las referencias de la interfaz.",
+                this
+            );
+
             return;
         }
 
         if (procesandoLogin)
             return;
 
-        if (!firebaseListo || databaseReference == null)
+        if (!firebaseListo ||
+            firebaseAuth == null ||
+            firebaseAuth.CurrentUser == null ||
+            databaseReference == null)
         {
             mensajeText.text =
                 "El servidor todavía se está conectando. Intenta de nuevo.";
+
             return;
         }
 
@@ -124,7 +187,9 @@ public class LoginManager : MonoBehaviour
 
         if (string.IsNullOrEmpty(nombre))
         {
-            mensajeText.text = "Por favor ingresa tu nombre.";
+            mensajeText.text =
+                "Por favor ingresa tu nombre.";
+
             return;
         }
 
@@ -132,6 +197,7 @@ public class LoginManager : MonoBehaviour
         {
             mensajeText.text =
                 "El nombre debe tener al menos 3 caracteres.";
+
             return;
         }
 
@@ -144,16 +210,23 @@ public class LoginManager : MonoBehaviour
 
     private IEnumerator GuardarRegistroEnFirebase(string nombre)
     {
-        if (databaseReference == null)
+        if (databaseReference == null ||
+            firebaseAuth == null ||
+            firebaseAuth.CurrentUser == null)
         {
-            MostrarError("La conexión con el servidor no está disponible.");
+            MostrarError(
+                "No hay una sesión válida de Firebase."
+            );
+
             yield break;
         }
 
-        string userId = SystemInfo.deviceUniqueIdentifier;
-        string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        // UID de Firebase para cumplir las reglas de seguridad.
+        string userId = firebaseAuth.CurrentUser.UserId;
 
-        // Crear un objeto serializable para Firebase.
+        string timestamp =
+            DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
         VisitanteData registro = new VisitanteData
         {
             nombre = nombre,
@@ -164,7 +237,7 @@ public class LoginManager : MonoBehaviour
 
         string json = JsonUtility.ToJson(registro);
 
-        Task tarea = null;
+        Task tarea;
 
         try
         {
@@ -176,56 +249,69 @@ public class LoginManager : MonoBehaviour
         catch (Exception ex)
         {
             Debug.LogException(ex, this);
-            MostrarError("No se pudo guardar el registro.");
+            MostrarError("No se pudo iniciar el registro.");
             yield break;
         }
 
-        // Esperar a que termine Firebase sin bloquear Unity.
-        while (!tarea.IsCompleted)
-            yield return null;
+        // Esperar sin bloquear Unity.
+        yield return new WaitUntil(() => tarea.IsCompleted);
 
         if (tarea.IsCanceled || tarea.IsFaulted)
         {
             Debug.LogError(
-                "Error al guardar en Firebase: " + tarea.Exception, this);
+                "Error al guardar en Firebase: " +
+                tarea.Exception, this
+            );
 
-            MostrarError("Error al registrar. Intenta de nuevo.");
+            MostrarError(
+                "Error al registrar. Intenta de nuevo."
+            );
+
             yield break;
         }
 
-        Debug.Log("Registro guardado correctamente en Firebase.");
+        Debug.Log(
+            "Registro guardado correctamente en Firebase.", this
+        );
 
         // Guardar el nombre localmente.
         PlayerPrefs.SetString("PlayerName", nombre);
         PlayerPrefs.Save();
 
-        // Configurar Photon.
+        // Configurar el nombre para Photon.
         PhotonNetwork.NickName = nombre;
 
-        // Cerrar el panel, si existe.
+        // Cerrar el panel de login.
         if (loginPanel != null)
             loginPanel.SetActive(false);
 
-        Debug.Log(
-            "Nombre configurado: " + nombre +
-            ". Cargando escena: " + nombreEscenaMuseo);
+        // Mostrar el menú global en la misma escena.
+        if (panelGlobal != null)
+        {
+            panelGlobal.SetActive(true);
 
-        // Comprobar que la escena esté incluida en Build Settings.
-        if (!Application.CanStreamedLevelBeLoaded(nombreEscenaMuseo))
+            Debug.Log(
+                "Login completado. Mostrando Panel Global.", this
+            );
+        }
+        else
         {
             Debug.LogError(
-                "No se puede cargar la escena '" +
-                nombreEscenaMuseo +
-                "'. Revisa su nombre y Build Profiles.", this);
+                "LoginManager: Panel Global no está asignado en el Inspector.",
+                this
+            );
+
+            MostrarError(
+                "No se pudo mostrar el menú principal."
+            );
 
             if (loginPanel != null)
                 loginPanel.SetActive(true);
 
-            MostrarError("No se encontró la escena del museo.");
             yield break;
         }
 
-        SceneManager.LoadScene(nombreEscenaMuseo);
+        procesandoLogin = false;
     }
 
     private void MostrarError(string mensaje)
