@@ -1,29 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class LogicaEntreEscenas : MonoBehaviour
 {
     private void Awake()
     {
-        var noDestruirEntreEscenas = FindObjectsOfType<LogicaEntreEscenas>();
-        if (noDestruirEntreEscenas.Length  > 1)
+        // Buscar otras instancias sin ordenar los resultados.
+        LogicaEntreEscenas[] instancias =
+            Object.FindObjectsByType<LogicaEntreEscenas>(
+                FindObjectsSortMode.None
+            );
+
+        // Si ya existe otra instancia, destruir esta.
+        if (instancias.Length > 1)
         {
             Destroy(gameObject);
             return;
         }
 
+        // Mantener este objeto al cambiar de escena.
         DontDestroyOnLoad(gameObject);
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
+

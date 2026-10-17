@@ -744,8 +744,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 5, y: 396}
-  m_SizeDelta: {x: 457.7079, y: 97.8411}
+  m_AnchoredPosition: {x: 7.6453, y: 396}
+  m_SizeDelta: {x: 459.1735, y: 101.8367}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &347836883
 MonoBehaviour:
@@ -1170,8 +1170,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 4, y: 287}
-  m_SizeDelta: {x: 457.7079, y: 97.8411}
+  m_AnchoredPosition: {x: 2.106, y: 286.97092}
+  m_SizeDelta: {x: 454.3793, y: 98.3972}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &784772964
 MonoBehaviour:
@@ -1975,7 +1975,7 @@ GameObject:
   - component: {fileID: 1347454880}
   - component: {fileID: 1347454879}
   m_Layer: 5
-  m_Name: EntrarButton
+  m_Name: Button_continuar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2118,8 +2118,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 143, y: -36}
-  m_SizeDelta: {x: 160, y: 20}
+  m_AnchoredPosition: {x: 153.28174, y: -37}
+  m_SizeDelta: {x: 165.5838, y: 17.6045}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1434916885
 MonoBehaviour:
@@ -2219,8 +2219,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 7, y: 172}
-  m_SizeDelta: {x: 457.7079, y: 97.8411}
+  m_AnchoredPosition: {x: 4.292, y: 169.7208}
+  m_SizeDelta: {x: 452.5799, y: 98.1118}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1463056771
 MonoBehaviour:
@@ -2350,8 +2350,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 400, y: 14}
-  m_SizeDelta: {x: 450, y: 100}
+  m_AnchoredPosition: {x: 402.62, y: 21}
+  m_SizeDelta: {x: 444.76, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1637300906
 MonoBehaviour:
@@ -2678,8 +2678,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 140, y: 70}
-  m_SizeDelta: {x: 160, y: 20}
+  m_AnchoredPosition: {x: 154, y: 72}
+  m_SizeDelta: {x: 166.4641, y: 18.8937}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1857699327
 MonoBehaviour:
@@ -2732,9 +2732,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LogicaBrillo, Assembly-CSharp
-        m_MethodName: ChangeSlider
+      - m_Target: {fileID: 1216535030}
+        m_TargetAssemblyTypeName: ControladorOpciones, Assembly-CSharp
+        m_MethodName: CambiarBrillo
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2911,7 +2911,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1997029072
 MonoBehaviour:
   m_ObjectHideFlags: 0

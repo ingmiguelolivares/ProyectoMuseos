@@ -40,7 +40,7 @@ public class PlayerNameDisplay : MonoBehaviourPun
         // Color diferente para mi jugador
         if (photonView.IsMine)
         {
-            nombreText.color = Color.green;
+            nombreText.color = Color.black;
         }
         else
         {
