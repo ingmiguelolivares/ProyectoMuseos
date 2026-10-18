@@ -1,69 +1,77 @@
 
+
 using UnityEngine;
 using Photon.Pun;
+using TMPro; // NUEVO: permite controlar textos TextMeshPro de la interfaz.
 
 public class MovimientoPersonaje : MonoBehaviourPun
 {
     [Header("Movimiento")]
-    [SerializeField] private float velocidadMovimiento = 6f; // Velocidad con la que el personaje avanza y retrocede.
-    [SerializeField] private CharacterController characterController; // Componente que permite mover al personaje respetando las colisiones.
-    [SerializeField] private Transform transformPersonaje; // Transform que controla la orientación y dirección del personaje.
+    [SerializeField] private float velocidadMovimiento = 6f; // Velocidad de avance y retroceso.
+    [SerializeField] private CharacterController characterController; // Controla el movimiento y las colisiones.
+    [SerializeField] private Transform transformPersonaje; // Controla la orientación del personaje.
 
     [Header("Salto")]
-    [SerializeField] private float alturaSalto = 1f; // Altura aproximada que alcanza el personaje al saltar.
-    [SerializeField] private float gravedad = -20f; // Fuerza que hace que el personaje vuelva a caer.
-    private float velocidadVertical = 0f; // Guarda la velocidad vertical durante el salto y la caída.
+    [SerializeField] private float alturaSalto = 1f; // Altura aproximada del salto.
+    [SerializeField] private float gravedad = -20f; // Fuerza que hace caer al personaje.
+    private float velocidadVertical = 0f; // Velocidad vertical durante el salto y la caída.
 
     [Header("Giro del personaje")]
-    [SerializeField] private float duracionGiro = 0.3f; // Tiempo que tarda el personaje en completar su giro.
+    [SerializeField] private float duracionGiro = 0.3f; // Tiempo que tarda en girar.
 
     [Header("Cámaras")]
-    [SerializeField] private Camera camaraTerceraPersona; // Cámara original que muestra al personaje desde atrás.
-    [SerializeField] private Camera camaraPrimeraPersona; // Cámara original situada a la altura de los ojos del personaje.
-    [SerializeField] private Camera camaraOrbital; // Tercera cámara que gira alrededor del personaje utilizando el mouse.
-    [SerializeField] private KeyCode teclaCambiarCamara = KeyCode.C; // Tecla que permite alternar entre las tres cámaras.
+    [SerializeField] private Camera camaraTerceraPersona; // Cámara situada detrás del personaje.
+    [SerializeField] private Camera camaraPrimeraPersona; // Cámara desde la perspectiva del personaje.
+    [SerializeField] private Camera camaraOrbital; // Cámara que gira alrededor del personaje.
+    [SerializeField] private KeyCode teclaCambiarCamara = KeyCode.C; // Tecla para cambiar de cámara.
+
+    // NUEVO: referencia al texto que indica qué cámara está activa.
+    [Header("Interfaz de cámara")]
+    [SerializeField] private TMP_Text textoModoCamara;
 
     [Header("Configuración de cámara orbital")]
-    [SerializeField] private float distanciaOrbital = 4f; // Distancia entre la cámara orbital y el punto que observa.
-    [SerializeField] private float alturaObjetivoOrbital = 1.5f; // Altura del punto del personaje hacia el que mira la cámara.
-    [SerializeField] private float sensibilidadMouse = 3f; // Sensibilidad del movimiento del mouse al girar la cámara.
-    [SerializeField] private float anguloVerticalMinimo = -20f; // Inclinación mínima que puede alcanzar la cámara.
-    [SerializeField] private float anguloVerticalMaximo = 70f; // Inclinación máxima que puede alcanzar la cámara.
+    [SerializeField] private float distanciaOrbital = 4f; // Distancia entre la cámara y el punto observado.
+    [SerializeField] private float alturaObjetivoOrbital = 1.5f; // Altura del punto que observa la cámara.
+    [SerializeField] private float sensibilidadMouse = 3f; // Sensibilidad al mover el ratón.
+    [SerializeField] private float anguloVerticalMinimo = -20f; // Inclinación vertical mínima.
+    [SerializeField] private float anguloVerticalMaximo = 70f; // Inclinación vertical máxima.
 
-    private bool primeraPersona = false; // Indica si está activa la cámara en primera persona.
-    private bool girando = false; // Indica si el personaje está realizando un giro.
-    private float anguloObjetivo; // Ángulo final al que debe girar el personaje.
-    private float velocidadGiro; // Velocidad utilizada para completar el giro.
-    private float anguloInicial; // Ángulo del personaje antes de iniciar el giro.
+    private bool primeraPersona = false; // Indica si está activa la primera persona.
+    private bool girando = false; // Indica si el personaje está girando.
+    private float anguloObjetivo; // Ángulo final del giro.
+    private float velocidadGiro; // Velocidad del giro.
+    private float anguloInicial; // Orientación anterior al giro.
 
-    private int modoCamara = 0; // Identifica la cámara activa: 0 = tercera persona, 1 = primera persona, 2 = orbital.
-    private float anguloOrbitalHorizontal; // Controla el giro horizontal de la cámara alrededor del personaje.
-    private float anguloOrbitalVertical = 8f; // Controla la inclinación vertical inicial de la cámara orbital.
+    private int modoCamara = 0; // 0 = tercera persona, 1 = primera persona, 2 = cámara orbital.
+    private float anguloOrbitalHorizontal; // Giro horizontal de la cámara orbital.
+    private float anguloOrbitalVertical = 8f; // Inclinación inicial de la cámara orbital.
+
+    // Indica si el personaje local terminó de inicializar su controlador y sus cámaras.
+    // PhotonLauncher consulta esta propiedad antes de ocultar la pantalla de carga.
+    public bool EstaListo { get; private set; } = false;
 
     private void Awake()
     {
-        // Busca automáticamente el CharacterController si no fue asignado en el Inspector.
+        // Busca el CharacterController si no fue asignado en el Inspector.
         if (characterController == null)
             characterController = GetComponent<CharacterController>();
 
-        // Si no se asignó un objeto para controlar la orientación, utiliza el objeto actual.
+        // Utiliza el objeto actual si no se asignó un Transform.
         if (transformPersonaje == null)
             transformPersonaje = transform;
     }
 
     private void Start()
     {
-        // Comprueba que el personaje tenga el componente necesario para moverse y saltar.
+        // Comprueba que el personaje tenga el componente necesario para moverse.
         if (characterController == null)
         {
-            Debug.LogError(
-                "MovimientoPersonaje: falta CharacterController.", this);
+            Debug.LogError("MovimientoPersonaje: falta CharacterController.", this);
             enabled = false;
             return;
         }
 
         // Desactiva las cámaras de los personajes controlados por otros jugadores.
-        // Así cada usuario controla únicamente su propio personaje y sus cámaras.
         if (!photonView.IsMine)
         {
             DesactivarCamara(camaraTerceraPersona);
@@ -83,17 +91,49 @@ public class MovimientoPersonaje : MonoBehaviourPun
             return;
         }
 
+        // NUEVO: busca el texto en el Canvas de la escena si no fue asignado.
+        // El objeto de la interfaz debe llamarse exactamente TextoModoCamara.
+        if (textoModoCamara == null)
+        {
+            GameObject objetoTexto = GameObject.Find("TextoModoCamara");
+
+            if (objetoTexto != null)
+                textoModoCamara = objetoTexto.GetComponent<TMP_Text>();
+        }
+
+        // Informa si no se encontró el texto, sin impedir que el jugador se mueva.
+        if (textoModoCamara == null)
+        {
+            Debug.LogWarning(
+                "MovimientoPersonaje: no se encontró TextoModoCamara en la escena.");
+        }
+
         // Evita una duración de giro igual a cero o demasiado pequeña.
         duracionGiro = Mathf.Max(0.05f, duracionGiro);
 
-        // Calcula la velocidad para realizar el giro de 45 grados en el tiempo establecido.
+        // Calcula la velocidad necesaria para girar 45 grados en el tiempo establecido.
         velocidadGiro = 45f / duracionGiro;
 
-        // Inicializa el ángulo horizontal de la cámara orbital con la orientación actual del personaje.
+        // Inicializa la cámara orbital con la orientación del personaje.
         anguloOrbitalHorizontal = transformPersonaje.eulerAngles.y;
 
-        // Inicia el juego utilizando la cámara original en tercera persona.
+        // Activa inicialmente la cámara de tercera persona.
         CambiarCamara(0);
+
+        // Comprueba que la cámara inicial esté activa y habilitada.
+        if (!camaraTerceraPersona.enabled ||
+            !camaraTerceraPersona.gameObject.activeInHierarchy)
+        {
+            Debug.LogError(
+                "MovimientoPersonaje: la cámara de tercera persona no está activa.",
+                this);
+
+            EstaListo = false;
+            return;
+        }
+
+        // Informa al sistema de carga que el jugador terminó de inicializarse.
+        EstaListo = true;
     }
 
     private void Update()
@@ -102,23 +142,22 @@ public class MovimientoPersonaje : MonoBehaviourPun
         if (!photonView.IsMine)
             return;
 
-        // Detecta si el jugador presiona A o D para iniciar un giro.
+        // Detecta si se presiona A o D para iniciar un giro.
         ProcesarEntradaGiro();
 
-        // Actualiza progresivamente el giro hasta alcanzar el ángulo objetivo.
+        // Actualiza progresivamente el giro del personaje.
         ActualizarGiro();
 
-        // Gestiona el desplazamiento horizontal, el salto y la gravedad.
+        // Gestiona el desplazamiento, el salto y la gravedad.
         MovimientoDelPersonaje();
 
-        // Al presionar C, pasa a la siguiente cámara.
-        // El operador % hace que después de la cámara orbital vuelva a la primera cámara.
+        // Al pulsar C, cambia a la siguiente cámara.
         if (Input.GetKeyDown(teclaCambiarCamara))
         {
             CambiarCamara((modoCamara + 1) % 3);
         }
 
-        // Solo procesa el movimiento del mouse cuando está activa la cámara orbital.
+        // Solo permite girar la cámara con el ratón en el modo orbital.
         if (modoCamara == 2)
         {
             ActualizarCamaraOrbital();
@@ -128,7 +167,6 @@ public class MovimientoPersonaje : MonoBehaviourPun
     private void LateUpdate()
     {
         // Actualiza la posición de la cámara orbital después de mover al personaje.
-        // Esto permite que la cámara siga al personaje sin modificar su orientación.
         if (photonView.IsMine && modoCamara == 2 && camaraOrbital != null)
         {
             ColocarCamaraOrbital();
@@ -158,23 +196,23 @@ public class MovimientoPersonaje : MonoBehaviourPun
         // Guarda la orientación horizontal actual del personaje.
         anguloInicial = transformPersonaje.eulerAngles.y;
 
-        // Calcula el ángulo final sumando el giro solicitado.
+        // Calcula el ángulo final del giro.
         anguloObjetivo = anguloInicial + angulo;
 
-        // Indica que el personaje ha comenzado a girar.
+        // Indica que el personaje comenzó a girar.
         girando = true;
     }
 
     private void ActualizarGiro()
     {
-        // Si no hay un giro activo, no necesita actualizar la orientación.
+        // No hace nada si no hay un giro activo.
         if (!girando)
             return;
 
-        // Obtiene el ángulo horizontal actual del personaje.
+        // Obtiene el ángulo horizontal actual.
         float anguloActual = transformPersonaje.eulerAngles.y;
 
-        // Se acerca progresivamente al ángulo objetivo usando el tiempo transcurrido.
+        // Se acerca progresivamente al ángulo objetivo.
         float nuevoAngulo = Mathf.MoveTowardsAngle(
             anguloActual,
             anguloObjetivo,
@@ -182,36 +220,33 @@ public class MovimientoPersonaje : MonoBehaviourPun
         );
 
         // Aplica la nueva orientación al personaje.
-        // Si las cámaras son hijas de este objeto, también girarán con él.
         transformPersonaje.rotation = Quaternion.Euler(
             transformPersonaje.eulerAngles.x,
             nuevoAngulo,
             transformPersonaje.eulerAngles.z
         );
 
-        // Comprueba si el personaje ya llegó prácticamente al ángulo objetivo.
-        if (Mathf.Abs(
-            Mathf.DeltaAngle(nuevoAngulo, anguloObjetivo)
-        ) < 0.1f)
+        // Comprueba si el personaje llegó al ángulo objetivo.
+        if (Mathf.Abs(Mathf.DeltaAngle(nuevoAngulo, anguloObjetivo)) < 0.1f)
         {
-            // Ajusta la orientación final para evitar pequeñas diferencias de ángulo.
+            // Ajusta la orientación final para evitar pequeñas diferencias.
             transformPersonaje.rotation = Quaternion.Euler(
                 transformPersonaje.eulerAngles.x,
                 anguloObjetivo,
                 transformPersonaje.eulerAngles.z
             );
 
-            // Finaliza el giro y permite iniciar uno nuevo.
+            // Finaliza el giro.
             girando = false;
         }
     }
 
     private void MovimientoDelPersonaje()
     {
-        // Variable que indica cuánto avanzar o retroceder.
+        // Indica cuánto avanzar o retroceder.
         float adelante = 0f;
 
-        // W aumenta el movimiento hacia delante.
+        // W permite avanzar.
         if (Input.GetKey(KeyCode.W))
             adelante += 1f;
 
@@ -219,62 +254,56 @@ public class MovimientoPersonaje : MonoBehaviourPun
         if (Input.GetKey(KeyCode.S))
             adelante -= 1f;
 
-        // Calcula la dirección horizontal según la orientación del personaje.
+        // Calcula la dirección según la orientación del personaje.
         Vector3 direccion = transformPersonaje.forward * adelante;
 
-        // Evita que la magnitud de la dirección horizontal supere 1.
+        // Limita la magnitud de la dirección horizontal.
         direccion = Vector3.ClampMagnitude(direccion, 1f);
 
-        // Comprueba si el CharacterController está tocando el suelo.
+        // Comprueba si el personaje está tocando el suelo.
         if (characterController.isGrounded)
         {
-            // Mantiene una pequeña velocidad hacia abajo para ayudar a detectar el suelo.
+            // Mantiene una pequeña velocidad hacia abajo para detectar el suelo.
             if (velocidadVertical < 0f)
                 velocidadVertical = -2f;
 
-            // Solo permite saltar cuando el personaje está en el suelo.
+            // Solo permite saltar cuando está en el suelo.
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                // Calcula la velocidad inicial necesaria para alcanzar la altura de salto configurada.
-                velocidadVertical = Mathf.Sqrt(
-                    alturaSalto * -2f * gravedad
-                );
+                // Calcula la velocidad inicial del salto.
+                velocidadVertical = Mathf.Sqrt(alturaSalto * -2f * gravedad);
             }
         }
 
-        // Aplica la gravedad continuamente para que el personaje suba y después caiga.
+        // Aplica la gravedad durante el salto y la caída.
         velocidadVertical += gravedad * Time.deltaTime;
 
-        // Calcula el desplazamiento horizontal según la dirección y velocidad configuradas.
+        // Calcula el desplazamiento horizontal.
         Vector3 movimiento = direccion * velocidadMovimiento;
 
-        // Añade la velocidad vertical para combinar el desplazamiento con el salto.
+        // Añade la velocidad vertical.
         movimiento.y = velocidadVertical;
 
-        // Mueve al personaje teniendo en cuenta el tiempo transcurrido.
-        // CharacterController.Move permite controlar conjuntamente el salto y la gravedad.
+        // Mueve al personaje respetando las colisiones.
         characterController.Move(movimiento * Time.deltaTime);
     }
 
     private void ActualizarCamaraOrbital()
     {
-        // Mantiene el cursor visible para permitir el uso de botones y otros elementos de la interfaz.
+        // Mantiene el cursor visible y libre para interactuar con la interfaz.
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
-        // La cámara orbital solo gira mientras se mantiene presionado el botón derecho del mouse.
-        // Así se puede mover el cursor normalmente cuando no se está girando la cámara.
+        // La cámara solo gira mientras se mantiene pulsado el botón derecho del ratón.
         if (Input.GetMouseButton(1))
         {
-            // El movimiento horizontal del mouse cambia el ángulo alrededor del personaje.
-            anguloOrbitalHorizontal +=
-                Input.GetAxis("Mouse X") * sensibilidadMouse;
+            // El movimiento horizontal cambia el ángulo alrededor del personaje.
+            anguloOrbitalHorizontal += Input.GetAxis("Mouse X") * sensibilidadMouse;
 
-            // El movimiento vertical del mouse cambia la inclinación de la cámara.
-            anguloOrbitalVertical -=
-                Input.GetAxis("Mouse Y") * sensibilidadMouse;
+            // El movimiento vertical cambia la inclinación de la cámara.
+            anguloOrbitalVertical -= Input.GetAxis("Mouse Y") * sensibilidadMouse;
 
-            // Limita la inclinación para evitar que la cámara dé vueltas verticales completas.
+            // Limita la inclinación vertical.
             anguloOrbitalVertical = Mathf.Clamp(
                 anguloOrbitalVertical,
                 anguloVerticalMinimo,
@@ -285,26 +314,25 @@ public class MovimientoPersonaje : MonoBehaviourPun
 
     private void ColocarCamaraOrbital()
     {
-        // Sitúa el punto de observación a la altura de los ojos
-        // y un poco delante del personaje, para que el modelo no tape tanto la vista.
+        // Define el punto observado, situado a cierta altura y delante del personaje.
         Vector3 puntoObjetivo = transformPersonaje.position
             + Vector3.up * alturaObjetivoOrbital
             + transformPersonaje.forward * 0.5f;
 
-        // Calcula la orientación de la cámara a partir de los ángulos controlados por el mouse.
+        // Calcula la orientación orbital con los ángulos controlados por el ratón.
         Quaternion rotacionOrbital = Quaternion.Euler(
             anguloOrbitalVertical,
             anguloOrbitalHorizontal,
             0f
         );
 
-        // Calcula la posición de la cámara a la distancia configurada respecto al punto observado.
+        // Calcula la posición de la cámara respecto al punto observado.
         Vector3 desplazamiento = rotacionOrbital * Vector3.back * distanciaOrbital;
 
-        // Asigna la posición calculada a la cámara orbital.
+        // Coloca la cámara en la posición calculada.
         camaraOrbital.transform.position = puntoObjetivo + desplazamiento;
 
-        // Hace que la cámara mire hacia el personaje sin modificar la rotación del personaje.
+        // Hace que la cámara mire hacia el punto observado.
         camaraOrbital.transform.LookAt(puntoObjetivo);
     }
 
@@ -313,8 +341,27 @@ public class MovimientoPersonaje : MonoBehaviourPun
         // Guarda el índice de la cámara seleccionada.
         modoCamara = nuevoModo;
 
-        // Actualiza la variable que indica si se está usando la cámara en primera persona.
+        // Indica si está activa la cámara en primera persona.
         primeraPersona = (modoCamara == 1);
+
+        // NUEVO: actualiza el texto de la interfaz según la cámara seleccionada.
+        if (textoModoCamara != null)
+        {
+            switch (modoCamara)
+            {
+                case 0:
+                    textoModoCamara.text = "Cámara Tercera Persona";
+                    break;
+
+                case 1:
+                    textoModoCamara.text = "Cámara Primera Persona";
+                    break;
+
+                case 2:
+                    textoModoCamara.text = "Cámara lectura + Click Derecho";
+                    break;
+            }
+        }
 
         // Activa el objeto de la cámara seleccionada y desactiva las otras dos.
         camaraTerceraPersona.gameObject.SetActive(modoCamara == 0);
@@ -327,16 +374,11 @@ public class MovimientoPersonaje : MonoBehaviourPun
         camaraOrbital.enabled = (modoCamara == 2);
 
         // Obtiene el AudioListener de cada cámara, si existe.
-        AudioListener audioTercera =
-            camaraTerceraPersona.GetComponent<AudioListener>();
+        AudioListener audioTercera = camaraTerceraPersona.GetComponent<AudioListener>();
+        AudioListener audioPrimera = camaraPrimeraPersona.GetComponent<AudioListener>();
+        AudioListener audioOrbital = camaraOrbital.GetComponent<AudioListener>();
 
-        AudioListener audioPrimera =
-            camaraPrimeraPersona.GetComponent<AudioListener>();
-
-        AudioListener audioOrbital =
-            camaraOrbital.GetComponent<AudioListener>();
-
-        // Mantiene activo solo el AudioListener de la cámara seleccionada.
+        // Mantiene activo únicamente el AudioListener de la cámara seleccionada.
         if (audioTercera != null)
             audioTercera.enabled = (modoCamara == 0);
 
@@ -350,8 +392,8 @@ public class MovimientoPersonaje : MonoBehaviourPun
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        // Al activar la cámara orbital, inicializa su ángulo horizontal detrás del personaje.
-        // La orientación del personaje no se modifica al mover la cámara con el mouse.
+        // Al activar la cámara orbital, inicializa su ángulo horizontal
+        // con la orientación del personaje y coloca la cámara.
         if (modoCamara == 2)
         {
             anguloOrbitalHorizontal = transformPersonaje.eulerAngles.y;
@@ -365,12 +407,11 @@ public class MovimientoPersonaje : MonoBehaviourPun
         if (camara == null)
             return;
 
-        // Desactiva la cámara de los personajes que no pertenecen al jugador local.
+        // Desactiva la cámara de los personajes de otros jugadores.
         camara.enabled = false;
 
         // Desactiva también su AudioListener para evitar conflictos de audio.
-        AudioListener audio =
-            camara.GetComponent<AudioListener>();
+        AudioListener audio = camara.GetComponent<AudioListener>();
 
         if (audio != null)
             audio.enabled = false;

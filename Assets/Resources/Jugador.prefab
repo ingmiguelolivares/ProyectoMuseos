@@ -659,6 +659,7 @@ MonoBehaviour:
   camaraPrimeraPersona: {fileID: 2241372668978844140}
   camaraOrbital: {fileID: 1742331902616844231}
   teclaCambiarCamara: 99
+  textoModoCamara: {fileID: 0}
   distanciaOrbital: 0.01
   alturaObjetivoOrbital: 0.9
   sensibilidadMouse: 2
