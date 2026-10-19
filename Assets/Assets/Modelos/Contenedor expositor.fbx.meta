@@ -3,7 +3,87 @@ guid: aca0ab85ee0238140af6c83527678d6b
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_68
+    second: {fileID: 2100000, guid: 649a1e2bb79b76b45b43e89f158bdd47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: bd0e8267555b1d346b0f446a59c8b7c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic
+    second: {fileID: 2100000, guid: 9f6d043b859c78b49b984cbbff4abd81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic (1)
+    second: {fileID: 2100000, guid: 14db67dbb5cf9f6409d721656b401bf5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic (2)
+    second: {fileID: 2100000, guid: 7e21ecb667de2b444843b453900f8b3b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Plastic (3)
+    second: {fileID: 2100000, guid: 9372139cfb5f1d241bfd50b31115f576, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: container
+    second: {fileID: 2100000, guid: 6b917ac00a8c766408f459c773708c91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: drywall paredes
+    second: {fileID: 2100000, guid: 814f0bead676ee24f867eea5b374e3f4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: equis
+    second: {fileID: 2100000, guid: 3fdcb439e60b46646a9176d7ac7eddc9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: espuma
+    second: {fileID: 2100000, guid: 3d6665e5aedb5074788a0157f4dbf082, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: panel solar
+    second: {fileID: 2100000, guid: e690b9e415bbc384e8b6941c8a55b7cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pantalla LED
+    second: {fileID: 2100000, guid: d8041a7c81e690b4ea7d4430407e86a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: piso caucho
+    second: {fileID: 2100000, guid: 02ccf887460a89f428e39e7c057190b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: qr ejem_
+    second: {fileID: 2100000, guid: d5ceaece46516144c95058c222bc73a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "solo caf\xE9"
+    second: {fileID: 2100000, guid: e2dadae8937052046b0b38898fa72692, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vidrio
+    second: {fileID: 2100000, guid: e57c53d9919eaba42a11aa39406be87c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -16,8 +96,6 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
