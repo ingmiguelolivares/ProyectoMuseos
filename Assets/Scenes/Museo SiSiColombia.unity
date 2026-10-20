@@ -2636,7 +2636,6 @@ GameObject:
   - component: {fileID: 100770717}
   - component: {fileID: 100770722}
   - component: {fileID: 100770721}
-  - component: {fileID: 100770720}
   - component: {fileID: 100770719}
   m_Layer: 0
   m_Name: ParedQ (31)
@@ -2679,29 +2678,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 42, y: 1, z: 1}
-  m_Center: {x: 19, y: 0, z: 0}
---- !u!65 &100770720
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100770716}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.8753755, y: 1, z: 0.9999998}
+  m_Center: {x: -0.5623083, y: -0.000000267693, z: 0.00000016309495}
 --- !u!23 &100770721
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3565,9 +3543,7 @@ GameObject:
   - component: {fileID: 120852068}
   - component: {fileID: 120852073}
   - component: {fileID: 120852072}
-  - component: {fileID: 120852071}
   - component: {fileID: 120852070}
-  - component: {fileID: 120852069}
   m_Layer: 0
   m_Name: ParedQ (39)
   m_TagString: Untagged
@@ -3590,19 +3566,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 180, y: -90, z: -90}
---- !u!114 &120852069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 120852067}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &120852070
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3622,29 +3585,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 42, y: 1, z: 1}
-  m_Center: {x: 19, y: 0, z: 0}
---- !u!65 &120852071
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 120852067}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.9184315, y: 1, z: 0.9999998}
+  m_Center: {x: -0.5407872, y: -0.0000002673962, z: 0.00000016293615}
 --- !u!23 &120852072
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6235,9 +6177,7 @@ GameObject:
   - component: {fileID: 223662423}
   - component: {fileID: 223662428}
   - component: {fileID: 223662427}
-  - component: {fileID: 223662426}
   - component: {fileID: 223662425}
-  - component: {fileID: 223662424}
   m_Layer: 0
   m_Name: ParedQ (29)
   m_TagString: Untagged
@@ -6260,19 +6200,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 180, y: -90, z: -90}
---- !u!114 &223662424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 223662422}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &223662425
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6292,29 +6219,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 42, y: 1, z: 1}
-  m_Center: {x: 19, y: 0, z: 0}
---- !u!65 &223662426
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 223662422}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4.4167094, y: 1, z: 0.9999998}
+  m_Center: {x: 0.20835546, y: -0.00000025706447, z: 0.00000015740824}
 --- !u!23 &223662427
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7654,9 +7560,7 @@ GameObject:
   - component: {fileID: 264361897}
   - component: {fileID: 264361902}
   - component: {fileID: 264361901}
-  - component: {fileID: 264361900}
   - component: {fileID: 264361899}
-  - component: {fileID: 264361898}
   m_Layer: 0
   m_Name: ParedQ (25)
   m_TagString: Untagged
@@ -7679,19 +7583,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 180, y: -90, z: -90}
---- !u!114 &264361898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 264361896}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &264361899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7711,29 +7602,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 42, y: 1, z: 1}
-  m_Center: {x: 19, y: 0, z: 0}
---- !u!65 &264361900
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 264361896}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4.0878673, y: 1, z: 0.9999998}
+  m_Center: {x: 0.043934908, y: -0.0000001586215, z: 0.00000015862149}
 --- !u!23 &264361901
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9283,9 +9153,7 @@ GameObject:
   - component: {fileID: 304140015}
   - component: {fileID: 304140020}
   - component: {fileID: 304140019}
-  - component: {fileID: 304140018}
   - component: {fileID: 304140017}
-  - component: {fileID: 304140016}
   m_Layer: 0
   m_Name: ParedQ (32)
   m_TagString: Untagged
@@ -9308,19 +9176,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 180, y: -90, z: -90}
---- !u!114 &304140016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 304140014}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &304140017
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9340,29 +9195,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 42, y: 1, z: 1}
-  m_Center: {x: 19, y: 0, z: 0}
---- !u!65 &304140018
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 304140014}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.7123517, y: 1, z: 0.9999998}
+  m_Center: {x: -1.1438253, y: -0.00000027571295, z: 0.00000016738595}
 --- !u!23 &304140019
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9454,9 +9288,7 @@ GameObject:
   - component: {fileID: 306058872}
   - component: {fileID: 306058877}
   - component: {fileID: 306058876}
-  - component: {fileID: 306058875}
   - component: {fileID: 306058874}
-  - component: {fileID: 306058873}
   m_Layer: 0
   m_Name: ParedQ (38)
   m_TagString: Untagged
@@ -9479,19 +9311,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 180, y: -90, z: -90}
---- !u!114 &306058873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 306058871}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &306058874
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9511,29 +9330,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 42, y: 1, z: 1}
-  m_Center: {x: 19, y: 0, z: 0}
---- !u!65 &306058875
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 306058871}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 5.7415924, y: 1, z: 0.9999998}
+  m_Center: {x: 0.8707934, y: -0.0000002479285, z: 0.00000015252013}
 --- !u!23 &306058876
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11175,9 +10973,7 @@ GameObject:
   - component: {fileID: 375048607}
   - component: {fileID: 375048612}
   - component: {fileID: 375048611}
-  - component: {fileID: 375048610}
   - component: {fileID: 375048609}
-  - component: {fileID: 375048608}
   m_Layer: 0
   m_Name: ParedQ (27)
   m_TagString: Untagged
@@ -11200,19 +10996,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 180, y: -90, z: -90}
---- !u!114 &375048608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375048606}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &375048609
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11232,29 +11015,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 42, y: 1, z: 1}
-  m_Center: {x: 19, y: 0, z: 0}
---- !u!65 &375048610
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375048606}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 7.9901133, y: 1, z: 0.9999998}
+  m_Center: {x: 1.9950557, y: -0.00000019183858, z: 0.00000014422422}
 --- !u!23 &375048611
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14976,9 +14738,7 @@ GameObject:
   - component: {fileID: 491558121}
   - component: {fileID: 491558126}
   - component: {fileID: 491558125}
-  - component: {fileID: 491558124}
   - component: {fileID: 491558123}
-  - component: {fileID: 491558122}
   m_Layer: 0
   m_Name: ParedQ (28)
   m_TagString: Untagged
@@ -15001,19 +14761,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 180, y: -90, z: -90}
---- !u!114 &491558122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 491558120}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &491558123
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15033,29 +14780,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 42, y: 1, z: 1}
-  m_Center: {x: 19, y: 0, z: 0}
---- !u!65 &491558124
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 491558120}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 6.5549335, y: 1, z: 0.9999998}
+  m_Center: {x: 1.2774662, y: -0.0000002423199, z: 0.0000001495193}
 --- !u!23 &491558125
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18268,9 +17994,7 @@ GameObject:
   - component: {fileID: 604634574}
   - component: {fileID: 604634579}
   - component: {fileID: 604634578}
-  - component: {fileID: 604634577}
   - component: {fileID: 604634576}
-  - component: {fileID: 604634575}
   m_Layer: 0
   m_Name: ParedQ (16)
   m_TagString: Untagged
@@ -18293,19 +18017,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: -90}
---- !u!114 &604634575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 604634573}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &604634576
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18325,29 +18036,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 42, y: 1, z: 1}
-  m_Center: {x: 19, y: 0, z: 0}
---- !u!65 &604634577
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 604634573}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.6398704, y: 1, z: 0.9999998}
+  m_Center: {x: -0.68006164, y: 0.00000016396385, z: -0.00000016396385}
 --- !u!23 &604634578
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18412,9 +18102,7 @@ GameObject:
   - component: {fileID: 607415322}
   - component: {fileID: 607415327}
   - component: {fileID: 607415326}
-  - component: {fileID: 607415325}
   - component: {fileID: 607415324}
-  - component: {fileID: 607415323}
   m_Layer: 0
   m_Name: ParedQ (26)
   m_TagString: Untagged
@@ -18437,19 +18125,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 180, y: -90, z: -90}
---- !u!114 &607415323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 607415321}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &607415324
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18469,29 +18144,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 42, y: 1, z: 1}
-  m_Center: {x: 19, y: 0, z: 0}
---- !u!65 &607415325
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 607415321}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4.9387345, y: 1, z: 0.9999998}
+  m_Center: {x: 0.46936834, y: -0.00000015548224, z: 0.00000015548223}
 --- !u!23 &607415326
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23258,9 +22912,7 @@ GameObject:
   - component: {fileID: 796658216}
   - component: {fileID: 796658221}
   - component: {fileID: 796658220}
-  - component: {fileID: 796658219}
   - component: {fileID: 796658218}
-  - component: {fileID: 796658217}
   m_Layer: 0
   m_Name: ParedQ (18)
   m_TagString: Untagged
@@ -23283,19 +22935,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: -90}
---- !u!114 &796658217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 796658215}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &796658218
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23315,29 +22954,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 42, y: 1, z: 1}
-  m_Center: {x: 19, y: 0, z: 0}
---- !u!65 &796658219
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 796658215}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4.021281, y: 1, z: 0.9999998}
+  m_Center: {x: 0.010638758, y: 0.0000001588672, z: -0.00000015886718}
 --- !u!23 &796658220
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23700,9 +23318,7 @@ GameObject:
   - component: {fileID: 808174458}
   - component: {fileID: 808174463}
   - component: {fileID: 808174462}
-  - component: {fileID: 808174461}
   - component: {fileID: 808174460}
-  - component: {fileID: 808174459}
   m_Layer: 0
   m_Name: ParedQ (22)
   m_TagString: Untagged
@@ -23725,19 +23341,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: -90}
---- !u!114 &808174459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 808174457}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &808174460
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23757,29 +23360,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 42, y: 1, z: 1}
-  m_Center: {x: 19, y: 0, z: 0}
---- !u!65 &808174461
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 808174457}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 3.4715488, y: 1, z: 0.9999998}
+  m_Center: {x: -0.2642307, y: 0.00000016246129, z: -0.00000016089544}
 --- !u!23 &808174462
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24109,9 +23691,7 @@ GameObject:
   - component: {fileID: 811908966}
   - component: {fileID: 811908971}
   - component: {fileID: 811908970}
-  - component: {fileID: 811908969}
   - component: {fileID: 811908968}
-  - component: {fileID: 811908967}
   m_Layer: 0
   m_Name: ParedQ (34)
   m_TagString: Untagged
@@ -24134,19 +23714,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 180, y: -90, z: -90}
---- !u!114 &811908967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811908965}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &811908968
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24166,29 +23733,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 7.6188536, y: 1, z: 0.9999998}
-  m_Center: {x: -5.809429, y: -0.00000034005825, z: 0.00000020181331}
---- !u!65 &811908969
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811908965}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.0591981, y: 1, z: 0.9999998}
+  m_Center: {x: -3.0296004, y: -0.00000030172046, z: 0.00000018130102}
 --- !u!23 &811908970
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24370,9 +23916,7 @@ GameObject:
   - component: {fileID: 827731565}
   - component: {fileID: 827731570}
   - component: {fileID: 827731569}
-  - component: {fileID: 827731568}
   - component: {fileID: 827731567}
-  - component: {fileID: 827731566}
   m_Layer: 0
   m_Name: ParedQ (23)
   m_TagString: Untagged
@@ -24395,19 +23939,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 90, y: -90, z: -90}
---- !u!114 &827731566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827731564}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &827731567
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24427,29 +23958,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 42, y: 1, z: 1}
-  m_Center: {x: 19, y: 0, z: 0}
---- !u!65 &827731568
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827731564}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4.5350895, y: 1, z: 1}
+  m_Center: {x: 0.26754117, y: 0, z: 0}
 --- !u!23 &827731569
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28052,9 +27562,7 @@ GameObject:
   - component: {fileID: 910962041}
   - component: {fileID: 910962046}
   - component: {fileID: 910962045}
-  - component: {fileID: 910962044}
   - component: {fileID: 910962043}
-  - component: {fileID: 910962042}
   m_Layer: 0
   m_Name: ParedQ (41)
   m_TagString: Untagged
@@ -28077,19 +27585,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 90, y: -90, z: -90}
---- !u!114 &910962042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910962040}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &910962043
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28109,29 +27604,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 19.94204, y: 1, z: 1}
-  m_Center: {x: 7.9710193, y: 0, z: 0}
---- !u!65 &910962044
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910962040}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.7795334, y: 1, z: 1}
+  m_Center: {x: 1.2718774, y: 0, z: 0}
 --- !u!23 &910962045
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -28196,9 +27670,7 @@ GameObject:
   - component: {fileID: 914737154}
   - component: {fileID: 914737159}
   - component: {fileID: 914737158}
-  - component: {fileID: 914737157}
   - component: {fileID: 914737156}
-  - component: {fileID: 914737155}
   m_Layer: 0
   m_Name: ParedQ (24)
   m_TagString: Untagged
@@ -28221,19 +27693,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 90, y: -90, z: -90}
---- !u!114 &914737155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 914737153}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &914737156
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28253,29 +27712,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 42, y: 1, z: 1}
-  m_Center: {x: 19, y: 0, z: 0}
---- !u!65 &914737157
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 914737153}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 3.9834206, y: 1, z: 1}
+  m_Center: {x: -0.008292742, y: 0, z: 0}
 --- !u!23 &914737158
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -29140,9 +28578,7 @@ GameObject:
   - component: {fileID: 943801272}
   - component: {fileID: 943801277}
   - component: {fileID: 943801276}
-  - component: {fileID: 943801275}
   - component: {fileID: 943801274}
-  - component: {fileID: 943801273}
   m_Layer: 0
   m_Name: ParedQ (30)
   m_TagString: Untagged
@@ -29165,19 +28601,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 180, y: -90, z: -90}
---- !u!114 &943801273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 943801271}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &943801274
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29199,27 +28622,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 42, y: 1, z: 1}
   m_Center: {x: 19, y: 0, z: 0}
---- !u!65 &943801275
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 943801271}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &943801276
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32678,9 +32080,7 @@ GameObject:
   - component: {fileID: 1092757874}
   - component: {fileID: 1092757879}
   - component: {fileID: 1092757878}
-  - component: {fileID: 1092757877}
   - component: {fileID: 1092757876}
-  - component: {fileID: 1092757875}
   m_Layer: 0
   m_Name: ParedQ (19)
   m_TagString: Untagged
@@ -32703,19 +32103,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: -90}
---- !u!114 &1092757875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1092757873}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &1092757876
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32735,29 +32122,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 23.785166, y: 1, z: 0.9999998}
-  m_Center: {x: 9.89258, y: 0.000000086785036, z: -0.00000008594861}
---- !u!65 &1092757877
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1092757873}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 5.5076613, y: 1, z: 0.9999998}
+  m_Center: {x: 0.75383097, y: 0.0000001548759, z: -0.00000015338318}
 --- !u!23 &1092757878
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32998,9 +32364,7 @@ GameObject:
   - component: {fileID: 1099385444}
   - component: {fileID: 1099385449}
   - component: {fileID: 1099385448}
-  - component: {fileID: 1099385447}
   - component: {fileID: 1099385446}
-  - component: {fileID: 1099385445}
   m_Layer: 0
   m_Name: ParedQ (20)
   m_TagString: Untagged
@@ -33023,19 +32387,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: -90}
---- !u!114 &1099385445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1099385443}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &1099385446
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33055,29 +32406,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 42, y: 1, z: 1}
-  m_Center: {x: 19, y: 0, z: 0}
---- !u!65 &1099385447
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1099385443}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4.624215, y: 1, z: 0.9999998}
+  m_Center: {x: 0.3121083, y: 0.00000015816711, z: -0.00000015664264}
 --- !u!23 &1099385448
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34358,9 +33688,7 @@ GameObject:
   - component: {fileID: 1125045725}
   - component: {fileID: 1125045730}
   - component: {fileID: 1125045729}
-  - component: {fileID: 1125045728}
   - component: {fileID: 1125045727}
-  - component: {fileID: 1125045726}
   m_Layer: 0
   m_Name: ParedQ (36)
   m_TagString: Untagged
@@ -34383,19 +33711,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 180, y: -90, z: -90}
---- !u!114 &1125045726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1125045724}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &1125045727
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34415,29 +33730,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 42, y: 1, z: 1}
-  m_Center: {x: 19, y: 0, z: 0}
---- !u!65 &1125045728
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1125045724}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.1366692, y: 1, z: 0.9999998}
+  m_Center: {x: -0.9316671, y: -0.000000272787, z: 0.00000016582044}
 --- !u!23 &1125045729
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -35393,7 +34687,6 @@ GameObject:
   - component: {fileID: 1162878167}
   - component: {fileID: 1162878166}
   - component: {fileID: 1162878165}
-  - component: {fileID: 1162878163}
   m_Layer: 0
   m_Name: ParedQ (33)
   m_TagString: Untagged
@@ -35416,19 +34709,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 180, y: -90, z: -90}
---- !u!114 &1162878163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1162878161}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &1162878165
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35448,8 +34728,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 6.4374814, y: 1, z: 0.9999998}
-  m_Center: {x: -2.7187426, y: -0.000000037495315, z: 0.000000020061528}
+  m_Size: {x: 2.8776765, y: 1, z: 0.9999998}
+  m_Center: {x: -0.93883973, y: -0.000000012947932, z: 0.0000000069276735}
 --- !u!23 &1162878166
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42094,9 +41374,7 @@ GameObject:
   - component: {fileID: 1473066614}
   - component: {fileID: 1473066619}
   - component: {fileID: 1473066618}
-  - component: {fileID: 1473066617}
   - component: {fileID: 1473066616}
-  - component: {fileID: 1473066615}
   m_Layer: 0
   m_Name: ParedQ (37)
   m_TagString: Untagged
@@ -42119,19 +41397,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 180, y: -90, z: -90}
---- !u!114 &1473066615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1473066613}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &1473066616
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42151,29 +41416,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 42, y: 1, z: 1}
-  m_Center: {x: 19, y: 0, z: 0}
---- !u!65 &1473066617
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1473066613}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 6.956562, y: 1, z: 0.9999998}
+  m_Center: {x: 1.4782763, y: -0.00000023955045, z: 0.00000014803753}
 --- !u!23 &1473066618
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42757,9 +42001,7 @@ GameObject:
   - component: {fileID: 1507480730}
   - component: {fileID: 1507480735}
   - component: {fileID: 1507480734}
-  - component: {fileID: 1507480733}
   - component: {fileID: 1507480732}
-  - component: {fileID: 1507480731}
   m_Layer: 0
   m_Name: ParedQ (21)
   m_TagString: Untagged
@@ -42782,19 +42024,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: -90}
---- !u!114 &1507480731
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1507480729}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &1507480732
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42814,29 +42043,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 42, y: 1, z: 1}
-  m_Center: {x: 19, y: 0, z: 0}
---- !u!65 &1507480733
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1507480729}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 3.2290993, y: 1, z: 0.9999998}
+  m_Center: {x: -0.3854517, y: 0.00000016336448, z: -0.00000016178993}
 --- !u!23 &1507480734
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43848,9 +43056,7 @@ GameObject:
   - component: {fileID: 1561920283}
   - component: {fileID: 1561920288}
   - component: {fileID: 1561920287}
-  - component: {fileID: 1561920286}
   - component: {fileID: 1561920285}
-  - component: {fileID: 1561920284}
   m_Layer: 0
   m_Name: ParedQ (40)
   m_TagString: Untagged
@@ -43873,19 +43079,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 90, y: -90, z: -90}
---- !u!114 &1561920284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1561920282}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &1561920285
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43905,29 +43098,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 11.107206, y: 1, z: 1}
-  m_Center: {x: 3.5535975, y: 0, z: 0}
---- !u!65 &1561920286
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1561920282}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4.694686, y: 1, z: 1}
+  m_Center: {x: 0.3473374, y: 0, z: 0}
 --- !u!23 &1561920287
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -47177,9 +46349,7 @@ GameObject:
   - component: {fileID: 1684970697}
   - component: {fileID: 1684970702}
   - component: {fileID: 1684970701}
-  - component: {fileID: 1684970700}
   - component: {fileID: 1684970699}
-  - component: {fileID: 1684970698}
   m_Layer: 0
   m_Name: ParedQ (35)
   m_TagString: Untagged
@@ -47202,19 +46372,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 180, y: -90, z: -90}
---- !u!114 &1684970698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684970696}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &1684970699
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47234,29 +46391,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 42, y: 1, z: 1}
-  m_Center: {x: 19, y: 0, z: 0}
---- !u!65 &1684970700
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1684970696}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.7781322, y: 1, z: 0.9999998}
+  m_Center: {x: -0.61093307, y: -0.0000002683636, z: 0.00000016345375}
 --- !u!23 &1684970701
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -50745,9 +49881,7 @@ GameObject:
   - component: {fileID: 1776522317}
   - component: {fileID: 1776522322}
   - component: {fileID: 1776522321}
-  - component: {fileID: 1776522320}
   - component: {fileID: 1776522319}
-  - component: {fileID: 1776522318}
   m_Layer: 0
   m_Name: ParedQ (15)
   m_TagString: Untagged
@@ -50770,19 +49904,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 180, y: -90, z: -90}
---- !u!114 &1776522318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776522316}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &1776522319
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50802,29 +49923,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 17.155195, y: 1, z: 1}
-  m_Center: {x: 6.577596, y: -0.00000012003164, z: 0.00000007617468}
---- !u!65 &1776522320
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776522316}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.9331048, y: 1, z: 1}
+  m_Center: {x: -0.5334476, y: -0.00000017707664, z: 0.00000011237666}
 --- !u!23 &1776522321
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53373,9 +52473,7 @@ GameObject:
   - component: {fileID: 1888073802}
   - component: {fileID: 1888073808}
   - component: {fileID: 1888073807}
-  - component: {fileID: 1888073806}
   - component: {fileID: 1888073805}
-  - component: {fileID: 1888073803}
   m_Layer: 0
   m_Name: ParedQ (14)
   m_TagString: Untagged
@@ -53398,19 +52496,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: -180, y: -90, z: -90}
---- !u!114 &1888073803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1888073801}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &1888073805
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -53430,29 +52515,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 42, y: 1, z: 1}
-  m_Center: {x: 19, y: 0, z: 0}
---- !u!65 &1888073806
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1888073801}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.9521277, y: 0.99999964, z: 1}
+  m_Center: {x: -0.5239331, y: -0.00000013477752, z: 0.00000014001019}
 --- !u!23 &1888073807
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -56002,9 +55066,7 @@ GameObject:
   - component: {fileID: 1985210733}
   - component: {fileID: 1985210738}
   - component: {fileID: 1985210737}
-  - component: {fileID: 1985210736}
   - component: {fileID: 1985210735}
-  - component: {fileID: 1985210734}
   m_Layer: 0
   m_Name: ParedQ (17)
   m_TagString: Untagged
@@ -56027,19 +55089,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1040284915}
   m_LocalEulerAnglesHint: {x: 180, y: -90, z: -90}
---- !u!114 &1985210734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1985210732}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc567252cfbea384e961b616ded0b9f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  video: {fileID: 0}
 --- !u!65 &1985210735
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56059,29 +55108,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 42, y: 1, z: 1}
-  m_Center: {x: 19, y: 0, z: 0}
---- !u!65 &1985210736
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1985210732}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.279636, y: 1, z: 0.9999998}
+  m_Center: {x: -1.3601859, y: -0.00000016898247, z: 0.00000016898247}
 --- !u!23 &1985210737
 MeshRenderer:
   m_ObjectHideFlags: 0
