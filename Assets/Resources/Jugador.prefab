@@ -649,7 +649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be391cc81d9ce044bba45fb2c149a36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadMovimiento: 5
+  velocidadMovimiento: 6
   characterController: {fileID: 5986971207158632595}
   transformPersonaje: {fileID: 1516984438858152839}
   alturaSalto: 1
@@ -823,6 +823,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3742941429168123163, guid: 876c1cd778846104996444ac2878d6d4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3636366817038875893}
     - targetCorrespondingSourceObject: {fileID: -877702689796551132, guid: 876c1cd778846104996444ac2878d6d4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6880919789373143123}
@@ -832,6 +835,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 876c1cd778846104996444ac2878d6d4, type: 3}
   m_PrefabInstance: {fileID: 2082351758701434354}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3392449129298245865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3742941429168123163, guid: 876c1cd778846104996444ac2878d6d4, type: 3}
+  m_PrefabInstance: {fileID: 2082351758701434354}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &3636366817038875893
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3392449129298245865}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.7418995, y: 5.9818788, z: 1.6887813}
+  m_Center: {x: -2.3936977, y: 1.963762, z: -0.001304626}
 --- !u!1 &8013093312146349014 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -877702689796551132, guid: 876c1cd778846104996444ac2878d6d4, type: 3}

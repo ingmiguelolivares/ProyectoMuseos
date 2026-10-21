@@ -1,31 +1,36 @@
+
 using UnityEngine;
 using UnityEngine.Video;
 
 public class Videos : MonoBehaviour
 {
     // Referencia al componente encargado de reproducir el video.
-    // Se puede asignar manualmente desde el Inspector de Unity.
     [Header("Configuración del video")]
     [SerializeField] private VideoPlayer video;
+
+    // Referencia al componente que reproduce el audio del video.
+    [SerializeField] private AudioSource audioVideo;
+
+    // Permite ajustar el volumen desde el Inspector.
+    // 0 = sin sonido y 1 = volumen máximo.
+    [Header("Volumen del video")]
+    [Range(0f, 1f)]
+    [SerializeField] private float volumenVideo = 1f;
 
 
     private void Awake()
     {
-        // Si no se asignó un VideoPlayer desde el Inspector,
-        // intenta encontrarlo en el mismo objeto que contiene este script.
+        // Busca el VideoPlayer en este objeto si no fue asignado manualmente.
         if (video == null)
         {
             video = GetComponent<VideoPlayer>();
         }
 
-        // Comprueba si se encontró el reproductor.
-        // Si no existe, muestra un mensaje de error y desactiva
-        // el script para evitar errores al intentar reproducir el video.
+        // Si no encuentra el reproductor, muestra un error y desactiva el script.
         if (video == null)
         {
             Debug.LogError(
-                "Videos: no se encontró el componente VideoPlayer. " +
-                "Añádelo al objeto o asígnalo en el Inspector.",
+                "Videos: no se encontró el componente VideoPlayer.",
                 this
             );
 
@@ -33,31 +38,41 @@ public class Videos : MonoBehaviour
             return;
         }
 
-        // Detiene la reproducción al iniciar para evitar
-        // que el video comience automáticamente.
+        // Busca el AudioSource si no fue asignado manualmente.
+        if (audioVideo == null)
+        {
+            audioVideo = GetComponent<AudioSource>();
+        }
+
+        // Configura el volumen inicial si existe un AudioSource.
+        if (audioVideo != null)
+        {
+            audioVideo.volume = volumenVideo;
+        }
+        else
+        {
+            Debug.LogWarning(
+                "Videos: no se encontró un AudioSource. " +
+                "Comprueba la configuración de audio del VideoPlayer.",
+                this
+            );
+        }
+
+        // Evita que el video comience a reproducirse automáticamente.
         video.Stop();
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
-        // Se ejecuta cuando otro objeto entra en el área
-        // delimitada por el Collider configurado como Trigger.
-        // Si el reproductor existe, inicia la reproducción del video.
-        if (video != null)
-        {
-            video.Play();
-        }
+        // Reproduce el video cuando un objeto entra en el área de detección.
+        video.Play();
     }
 
 
     private void OnTriggerExit(Collider other)
     {
-        // Se ejecuta cuando otro objeto sale del área de detección.
-        // Si el reproductor existe, detiene la reproducción del video.
-        if (video != null)
-        {
-            video.Stop();
-        }
+        // Detiene el video cuando un objeto sale del área de detección.
+        video.Stop();
     }
 }
